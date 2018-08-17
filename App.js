@@ -2,12 +2,13 @@ import React, { Component } from 'react';
 import { AppRegistry, StyleSheet, View } from 'react-native';
 import AssignmentInputForm from './components/InputAssignment'
 import InputCourse from './components/InputCourse'
+import Assignment from './components/StoredCourses'
 
 export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <InputCourse />
+        <Assignment name="CSCE 315" hours={3}/>
       </View>
     )
   }

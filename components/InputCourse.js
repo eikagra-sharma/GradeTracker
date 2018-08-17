@@ -1,12 +1,24 @@
 import React, { Component } from 'react';
-import { Dimensions, StyleSheet, TextInput, Button, View } from 'react-native';
+import { StyleSheet, TextInput, Button, View } from 'react-native';
 
-const CourseForm = () => (
-    <View style={styles.RowContainer}>
-            <TextInput style={styles.InputCourse} placeholder="Name of Course" />
-            <TextInput style={styles.InputHours} placeholder="Hours" />
-    </View>
-)
+export default class CourseForm extends Component {
+    constructor() {
+        super();
+        this.state = {name: "", hours: 0}
+    }
+
+    render() {
+        return(
+            <View>
+                <View style={styles.RowContainer}>
+                    <TextInput style={styles.InputCourse} placeholder="Name of Course" onChangeText={(name) => this.setState({ name })} />
+                    <TextInput style={styles.InputHours} placeholder="Hours" onChangeText={(hours) => this.setState({ hours })} />
+                </View>
+                <Button title="Add Course" onPress={f => f} color="blue"></Button>
+            </View>
+        );
+    }
+}
 
 const styles = StyleSheet.create({
     RowContainer: {
@@ -16,16 +28,18 @@ const styles = StyleSheet.create({
     },
     InputCourse: {
         padding: 5,
-        borderWidth: 0.9,
+        borderWidth: 2,
         width: 200,
-        height: 50
+        height: 50,
+        borderRadius: 15,
+        fontSize: 20
     },
     InputHours: {
         padding: 5,
-        borderWidth: 0.9,
+        borderWidth: 2,
         width: 80,
-        height: 50
+        height: 50,
+        borderRadius: 15,
+        fontSize: 20
     }
 });
-
-export default CourseForm
