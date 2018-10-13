@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Dimensions, StyleSheet, TextInput, Button, View } from 'react-native';
 
-export default class AssignmentInputForm extends Component {
+export default class AddAssignment extends Component {
     constructor() {
         super();
         this.state = {name: "", receivedGrade: 0, maxGrade: 100, weight: 0};
